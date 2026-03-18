@@ -10,12 +10,12 @@ import Order from "@/lib/models/Order"
 import User from "@/lib/models/User"
 
 const categoryColors: Record<string, string> = {
-  pcs: "bg-blue-500/20 text-blue-400",
-  monitores: "bg-purple-500/20 text-purple-400",
-  teclados: "bg-green-500/20 text-green-400",
-  mouse: "bg-orange-500/20 text-orange-400",
-  headsets: "bg-pink-500/20 text-pink-400",
-  almacenamiento: "bg-yellow-500/20 text-yellow-400",
+  pcs: "bg-blue-500/10 text-blue-400/70",
+  monitores: "bg-purple-500/10 text-purple-400/70",
+  teclados: "bg-green-500/10 text-green-400/70",
+  mouse: "bg-orange-500/10 text-orange-400/70",
+  headsets: "bg-pink-500/10 text-pink-400/70",
+  almacenamiento: "bg-yellow-500/10 text-yellow-400/70",
 }
 
 export default async function AdminPage() {
@@ -35,10 +35,10 @@ export default async function AdminPage() {
   const totalRevenue = revenueResult[0]?.total ?? 0
 
   const stats = [
-    { label: "Ingresos totales", value: `$${totalRevenue.toLocaleString()}`, icon: DollarSign, color: "text-green-400", bg: "bg-green-400/10" },
-    { label: "Productos", value: productCount.toString(), icon: Package, color: "text-blue-400", bg: "bg-blue-400/10" },
+    { label: "Ingresos totales", value: `$${totalRevenue.toLocaleString()}`, icon: DollarSign, color: "text-green-400/70", bg: "bg-green-400/8" },
+    { label: "Productos", value: productCount.toString(), icon: Package, color: "text-blue-400/70", bg: "bg-blue-400/8" },
     { label: "Órdenes", value: orderCount.toLocaleString(), icon: ShoppingBag, color: "text-primary", bg: "bg-primary/10" },
-    { label: "Clientes", value: customerCount.toLocaleString(), icon: Users, color: "text-purple-400", bg: "bg-purple-400/10" },
+    { label: "Clientes", value: customerCount.toLocaleString(), icon: Users, color: "text-purple-400/70", bg: "bg-purple-400/8" },
   ]
 
   const products = recentProducts.map((p) => ({

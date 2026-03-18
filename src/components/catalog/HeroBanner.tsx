@@ -6,11 +6,11 @@ import { Category } from "@/lib/types"
 import { cn } from "@/lib/utils"
 
 const featured: { label: string; value: Category; icon: React.ElementType; color: string }[] = [
-  { label: "Procesadores", value: "procesadores", icon: Cpu,        color: "text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/40" },
-  { label: "Tarjetas de Video", value: "gpus",    icon: Zap,        color: "text-violet-400 hover:bg-violet-500/10 hover:border-violet-500/40" },
-  { label: "Monitores",    value: "monitores",    icon: Monitor,     color: "text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/40" },
-  { label: "Almacenamiento", value: "almacenamiento", icon: HardDrive, color: "text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40" },
-  { label: "Teclados",    value: "teclados",      icon: Keyboard,   color: "text-green-400 hover:bg-green-500/10 hover:border-green-500/40" },
+  { label: "Procesadores",    value: "procesadores",   icon: Cpu,       color: "text-blue-400/65 hover:bg-blue-500/8 hover:border-blue-500/25" },
+  { label: "Tarjetas de Video", value: "gpus",         icon: Zap,       color: "text-violet-400/65 hover:bg-violet-500/8 hover:border-violet-500/25" },
+  { label: "Monitores",       value: "monitores",      icon: Monitor,   color: "text-cyan-400/65 hover:bg-cyan-500/8 hover:border-cyan-500/25" },
+  { label: "Almacenamiento",  value: "almacenamiento", icon: HardDrive, color: "text-amber-400/65 hover:bg-amber-500/8 hover:border-amber-500/25" },
+  { label: "Teclados",        value: "teclados",       icon: Keyboard,  color: "text-green-400/65 hover:bg-green-500/8 hover:border-green-500/25" },
 ]
 
 const trust = [

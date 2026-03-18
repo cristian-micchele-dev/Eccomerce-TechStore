@@ -19,9 +19,9 @@ interface ProductCardProps {
 }
 
 const badgeColors: Record<string, string> = {
-  Nuevo: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  Oferta: "bg-primary/20 text-primary border-primary/30",
-  Popular: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  Nuevo: "bg-blue-500/10 text-blue-400/75 border-blue-500/20",
+  Oferta: "bg-primary/15 text-primary border-primary/25",
+  Popular: "bg-amber-500/10 text-amber-400/75 border-amber-500/20",
 }
 
 export function ProductCard({ product, index = 0, isAdmin, onEdit, onDelete }: ProductCardProps) {
@@ -124,11 +124,11 @@ export function ProductCard({ product, index = 0, isAdmin, onEdit, onDelete }: P
           {/* Rating + stock bajo */}
           <div className="flex items-center justify-between mt-2">
             <div className="flex items-center gap-1">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+              <Star className="w-3 h-3 fill-amber-400/75 text-amber-400/75" />
               <span className="text-xs text-muted-foreground">{product.rating} ({product.reviews})</span>
             </div>
             {lowStock && (
-              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 border border-amber-500/25">
+              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400/70 border border-amber-500/20">
                 Quedan {product.stock}
               </span>
             )}

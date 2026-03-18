@@ -104,8 +104,8 @@ function HomeContent() {
         <div className="bg-transparent rounded-xl p-4 border border-border">
           <div className="flex items-start justify-between mb-3">
             <p className="text-xs text-muted-foreground">Productos</p>
-            <div className="w-7 h-7 rounded-md bg-blue-500/10 flex items-center justify-center">
-              <Package className="w-3.5 h-3.5 text-blue-400" />
+            <div className="w-7 h-7 rounded-md bg-blue-500/8 flex items-center justify-center">
+              <Package className="w-3.5 h-3.5 text-blue-400/70" />
             </div>
           </div>
           <p className="text-2xl font-bold font-mono tabular-nums">
@@ -120,9 +120,9 @@ function HomeContent() {
         <div className="bg-transparent rounded-xl p-4 border border-border">
           <div className="flex items-start justify-between mb-3">
             <p className="text-xs text-muted-foreground">Usuarios</p>
-            <div className="relative w-7 h-7 rounded-md bg-amber-500/10 flex items-center justify-center">
-              <Users className="w-3.5 h-3.5 text-amber-400" />
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-green-400 border border-card" />
+            <div className="relative w-7 h-7 rounded-md bg-amber-500/8 flex items-center justify-center">
+              <Users className="w-3.5 h-3.5 text-amber-400/70" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-green-400/80 border border-card" />
             </div>
           </div>
           <p className="text-2xl font-bold font-mono tabular-nums">
@@ -146,7 +146,7 @@ function HomeContent() {
               <span className="inline-block w-12 h-6 bg-secondary rounded animate-shimmer" />
             ) : statsData.ordersThisMonth.toLocaleString()}
           </p>
-          <p className="text-xs text-green-400 mt-1">órdenes confirmadas</p>
+          <p className="text-xs text-green-400/70 mt-1">órdenes confirmadas</p>
         </div>
       </div>}
 
