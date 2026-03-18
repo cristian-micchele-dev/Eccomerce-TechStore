@@ -1,6 +1,5 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import Google from "next-auth/providers/google"
 import bcrypt from "bcryptjs"
 import { connectDB } from "@/lib/mongoose"
 import User from "@/lib/models/User"
@@ -10,10 +9,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   trustHost: true,
   providers: [
-    Google({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
     Credentials({
       name: "credentials",
       credentials: {
@@ -47,26 +42,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   session: { strategy: "jwt" },
   callbacks: {
-    async signIn({ user, account }) {
-      if (account?.provider === "google") {
-        await connectDB()
-        await User.findOneAndUpdate(
-          { email: user.email! },
-          {
-            $setOnInsert: { role: "CUSTOMER" },
-            $set: {
-              name: user.name,
-              image: user.image,
-              provider: "google",
-              providerAccountId: account.providerAccountId,
-              emailVerified: new Date(),
-            },
-          },
-          { upsert: true, new: true }
-        )
-      }
-      return true
-    },
     async jwt({ token, user, trigger, session: updatedSession }) {
       if (user) {
         token.id = user.id

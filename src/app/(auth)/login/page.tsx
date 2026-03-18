@@ -3,17 +3,15 @@
 import { useState } from "react"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
-import { Cpu, Mail, Lock, Chrome, AlertCircle, Loader2 } from "lucide-react"
+import { Cpu, Mail, Lock, AlertCircle, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const [googleLoading, setGoogleLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -34,11 +32,6 @@ export default function LoginPage() {
     }
 
     window.location.href = "/"
-  }
-
-  async function handleGoogle() {
-    setGoogleLoading(true)
-    await signIn("google", { callbackUrl: "/" })
   }
 
   return (
@@ -62,28 +55,6 @@ export default function LoginPage() {
 
         {/* Card */}
         <div className="bg-card border border-border rounded-2xl p-6 shadow-xl shadow-black/20 space-y-5">
-
-          {/* Google */}
-          <Button
-            variant="outline"
-            className="w-full gap-2 h-10"
-            onClick={handleGoogle}
-            disabled={googleLoading}
-          >
-            {googleLoading ? (
-              <Loader2 className="w-4 h-4 animate-spin" />
-            ) : (
-              <Chrome className="w-4 h-4" />
-            )}
-            Continuar con Google
-          </Button>
-
-          {/* Divider */}
-          <div className="flex items-center gap-3">
-            <Separator className="flex-1" />
-            <span className="text-xs text-muted-foreground">o</span>
-            <Separator className="flex-1" />
-          </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
