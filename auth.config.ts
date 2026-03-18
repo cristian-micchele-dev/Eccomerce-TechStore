@@ -16,10 +16,7 @@ export const authConfig: NextAuthConfig = {
 
       if (!isProtected) return true          // Todo lo demás: acceso libre
       if (!isLoggedIn) return false          // Protegida + no logueado → /login
-      if (pathname.startsWith("/admin") && auth?.user?.role !== "ADMIN") {
-        return Response.redirect(new URL("/", nextUrl))
-      }
-      return true
+      return true                            // Check de rol admin → en admin/layout.tsx
     },
     async session({ session, token }) {
       if (token.role) session.user.role = token.role as string
