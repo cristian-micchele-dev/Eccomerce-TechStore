@@ -3,6 +3,7 @@ import type { NextAuthConfig } from "next-auth"
 // Config Edge-safe: sin imports de Node.js (sin Mongoose, sin bcrypt)
 // Usada SOLO en middleware para verificar JWT
 export const authConfig: NextAuthConfig = {
+  trustHost: true,
   pages: { signIn: "/login" },
   providers: [],
   callbacks: {
